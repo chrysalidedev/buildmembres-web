@@ -1,5 +1,5 @@
 const PHONE = "2250714015238"
-const MESSAGE = encodeURIComponent("Bonjour, j'utilise BuildMembre et j'ai un feedback à partager :")
+const MESSAGE = encodeURIComponent("Bonjour, j'utilise Build-Membres et j'ai un avis à partager :")
 
 export default function WhatsAppButton() {
     const url = `https://wa.me/${PHONE}?text=${MESSAGE}`
@@ -9,7 +9,7 @@ export default function WhatsAppButton() {
             href={url}
             target="_blank"
             rel="noopener noreferrer"
-            title="Envoyer un feedback via WhatsApp"
+            title="Envoyer vos avis via WhatsApp"
             className="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebe5d] text-white rounded-full shadow-lg px-4 py-3 transition-all duration-300 hover:scale-105 group"
         >
             <svg
@@ -22,7 +22,7 @@ export default function WhatsAppButton() {
                 <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.118 1.528 5.845L.057 23.571a.75.75 0 0 0 .92.92l5.726-1.471A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.694 9.694 0 0 1-4.946-1.355l-.355-.21-3.668.942.96-3.575-.23-.368A9.694 9.694 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z" />
             </svg>
             <span className="text-sm font-semibold whitespace-nowrap max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-300">
-                Feedback
+                Envoyer un avis
             </span>
         </a>
     )
