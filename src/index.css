@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+    /* Définir une couleur simple */
+    --color-primary: #1B4332;
+    --color-secondary: #2D6A4F;
+    --color-surface: #F8FAF9;
+    --color-dark: #1A1A2E;
+    --color-danger: #EF4444;
+    --color-success: #22C55E;
+
+    /* Definir les fonts family */
+    --font-body: "manrope";
+    --font-heading: "manrope";
+
+}
