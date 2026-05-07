@@ -1,5 +1,8 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 import WhatsAppButton from "./components/WhatsAppButton"
+import AdminLogin from "./pages/admin/AdminLogin"
+import AdminDashboard from "./pages/admin/AdminDashboard"
+import AdminOrganisations from "./pages/admin/AdminOrganisations"
 import Register from "./pages/Register"
 import Login from "./pages/Login"
 import Dashboard from "./pages/Dashboard"
@@ -47,6 +50,12 @@ export default function App() {
                 <Route path="/annonces" element={<AnnoncesListe />} />
                 <Route path="/annonces/nouvelle" element={<AnnonceForm />} />
                 <Route path="/annonces/:id/modifier" element={<AnnonceForm />} />
+
+                {/* Super Admin */}
+                <Route path="/admin/login" element={<AdminLogin />} />
+                <Route path="/admin/dashboard" element={<AdminDashboard />} />
+                <Route path="/admin/organisations" element={<AdminOrganisations />} />
+                <Route path="/admin" element={<Navigate to="/admin/login" replace />} />
             </Routes>
         </BrowserRouter>
     )
