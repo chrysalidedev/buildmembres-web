@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 import WhatsAppButton from "./components/WhatsAppButton"
+import Landing from "./pages/Landing"
 import AdminLogin from "./pages/admin/AdminLogin"
 import AdminDashboard from "./pages/admin/AdminDashboard"
 import AdminOrganisations from "./pages/admin/AdminOrganisations"
@@ -30,7 +31,7 @@ export default function App() {
         <BrowserRouter>
             <WhatsAppButton />
             <Routes>
-                <Route path="/" element={<PublicRoute><Navigate to="/login" replace /></PublicRoute>} />
+                <Route path="/" element={<Landing />} />
                 <Route path="/register" element={<PublicRoute><Register /></PublicRoute>} />
                 <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
                 <Route path="/dashboard" element={<Dashboard />} />
