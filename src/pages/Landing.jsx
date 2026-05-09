@@ -1,11 +1,16 @@
 import { Link } from "react-router-dom"
 import logoprimary from "../assets/logoprimary.png"
+import screenshot1 from "../assets/tableaubord.png"
+import screenshot2 from "../assets/membrestatut.png"
+import screenshot3 from "../assets/registerpaiement.png"
+import screenshot4 from "../assets/registermembre.png"
+import screenshot5 from "../assets/presencereunion.png"
 
 /* ─── Placeholder screenshot ──────────────────────────── */
-function Screenshot({ label, tall = false }) {
+function Screenshot({ label, tall = false, photo = '' }) {
     return (
-        <div
-            className={`w-full ${tall ? "aspect-[16/10]" : "aspect-[16/9]"} rounded-2xl border-2 border-dashed border-primary/30 bg-primary/5 flex flex-col items-center justify-center gap-3 select-none`}
+        photo == '' ? <div
+            className={`w-full ${tall ? "aspect-16/10" : "aspect-video"} rounded-2xl border-2 border-dashed border-primary/30 bg-primary/5 flex flex-col items-center justify-center gap-3 select-none`}
         >
             <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
                 <svg className="w-6 h-6 text-primary/50" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -17,6 +22,7 @@ function Screenshot({ label, tall = false }) {
                 <p className="text-primary/30 text-xs mt-0.5">Remplacer par une vraie capture</p>
             </div>
         </div>
+            : <img src={photo} alt={label} className={`w-full ${tall ? "aspect-16/10" : "aspect-video"} object-cover`} />
     )
 }
 
@@ -114,7 +120,7 @@ export default function Landing() {
                             app.build-membres.com/dashboard
                         </span>
                     </div>
-                    <Screenshot label="Tableau de bord principal" tall />
+                    <Screenshot label="Tableau de bord principal" tall photo={screenshot1} />
                 </div>
             </section>
 
@@ -173,16 +179,16 @@ export default function Landing() {
 
                 {/* Screenshot 1 — pleine largeur */}
                 <div className="mb-8 shadow-xl shadow-gray-200 rounded-2xl overflow-hidden border border-gray-200">
-                    <Screenshot label="Liste des membres avec statut de cotisation" />
+                    <Screenshot label="Liste des membres avec statut de cotisation" photo={screenshot2} />
                 </div>
 
                 {/* Screenshots 2 + 3 — côte à côte */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="shadow-lg shadow-gray-200 rounded-2xl overflow-hidden border border-gray-200">
-                        <Screenshot label="Enregistrement d'un paiement" />
+                        <Screenshot label="Enregistrement d'un paiement" photo={screenshot3} />
                     </div>
                     <div className="shadow-lg shadow-gray-200 rounded-2xl overflow-hidden border border-gray-200">
-                        <Screenshot label="Présences à une réunion" />
+                        <Screenshot label="Présences à une réunion" photo={screenshot5} />
                     </div>
                 </div>
             </section>
@@ -220,7 +226,7 @@ export default function Landing() {
                             </Link>
                         </div>
                         <div className="shadow-xl shadow-gray-200 rounded-2xl overflow-hidden border border-gray-200">
-                            <Screenshot label="Formulaire d'inscription d'un membre" tall />
+                            <Screenshot label="Formulaire d'inscription d'un membre" tall photo={screenshot4} />
                         </div>
                     </div>
                 </div>
